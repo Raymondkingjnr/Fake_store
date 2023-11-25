@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import NavLinks from "./NavLinks";
 
+const themes = {
+  light: "light",
+  business: "business",
+};
+
+const getThemeFromLocalStorage = () => {
+  return localStorage.getItem("theme") || themes.light;
+};
+
 const Navbar = () => {
+  const [theme, setTheme] = useState(getThemeFromLocalStorage());
+
+  const handleTheme = () => {
+    const { light, business } = themes;
+
+    const newTheme = theme === light ? business : light;
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
-    <div className="bg-base-200">
+    <nav className="bg-base-200">
       <div className="navbar align-element">
         <div className="navbar-start">
           <NavLink
             to={"/"}
-            className="hidden lg:flex btn btn-primary text-3xl items-center"
+            className="hidden lg:flex btn btn-accent text-3xl items-center"
           >
             FS
           </NavLink>
@@ -35,7 +58,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <label className="swap swap-rotate">
-            <input type="checkbox" />
+            <input type="checkbox" onChange={handleTheme} />
             <BsSunFill className="swap-on h-4 w-4" />
             <BsMoonFill className="swap-off h-4 w-4" />
           </label>
@@ -44,14 +67,14 @@ const Navbar = () => {
             <div className="indicator">
               <BsCart3 className="h-6 w-6" />
 
-              <span className="badge badge-sm badge-primary indicator-item">
+              <span className="badge badge-sm badge-accent indicator-item">
                 0
               </span>
             </div>
           </NavLink>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

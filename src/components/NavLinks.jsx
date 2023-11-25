@@ -12,7 +12,7 @@ const links = [
 
 const NavLinks = () => {
   return (
-    <div>
+    <div className="lg:flex">
       {links.map((link) => {
         const { id, url, text } = link;
         return (

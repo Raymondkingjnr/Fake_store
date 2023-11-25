@@ -1,7 +1,14 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
+import ProductGrid from "./ProductGrid";
 
-const featuredProducts = () => {
-  return <div>featuredProducts</div>;
+const FeaturedProducts = () => {
+  return (
+    <div className="pt-24">
+      <SectionTitle text="Featured Products" />
+      <ProductGrid />
+    </div>
+  );
 };
 
-export default featuredProducts;
+export default FeaturedProducts;
