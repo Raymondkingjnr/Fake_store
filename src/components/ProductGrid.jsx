@@ -20,7 +20,7 @@ const ProductGrid = () => {
               <img
                 src={image}
                 alt={title}
-                className="rounded-xl h-72 w-full sm:h-28 md:h-48  object-contain"
+                className="rounded-xl h-72 w-72 sm:h-28 md:h-48  object-cover"
               />
             </figure>
             <div className="card-body items-center mt-2 text-center">

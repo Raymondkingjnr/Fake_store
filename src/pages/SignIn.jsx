@@ -7,7 +7,7 @@ const SignIn = () => {
     <section className="h-screen grid place-items-center">
       <Form
         method="post"
-        className="w-96 card border bg-base-200 p-4 shadow-lg flex flex-col gap-y-4"
+        className="w-96 card bg-base-200 p-4 shadow-lg flex flex-col gap-y-4"
       >
         <h2 className="font-semibold lg:text-xl sm:text-sm  text-center ">
           Login

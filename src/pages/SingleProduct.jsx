@@ -9,7 +9,7 @@ export const loader = async ({ params }) => {
 
 const SingleProduct = () => {
   const { product } = useLoaderData();
-  console.log(product);
+  // console.log(product);
   const { title, description, price, image, category } = product;
   const nairaAmount = formatPrice(price);
   const [amount, setAmount] = useState(1);
@@ -24,7 +24,7 @@ const SingleProduct = () => {
       <img
         src={image}
         alt={title}
-        className="w-96 h-96 object-contain rounded-lg lg:w-full"
+        className="w-96 h-96 object-cover rounded-lg lg:w-full"
       />
       <div className="grid">
         {/* PRODUCT INFO */}

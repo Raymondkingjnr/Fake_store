@@ -21,7 +21,7 @@ const Hero = () => {
           quas, aperiam unde.
         </p>
         <div className="mt-10">
-          <Link to={"product"} className="btn btn-accent">
+          <Link to={"products"} className="btn btn-accent">
             Our Products
           </Link>
         </div>

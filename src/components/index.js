@@ -6,3 +6,5 @@ export { default as FeaturedProducts } from "./FeaturedProducts";
 export { default as ProductGrid } from "./ProductGrid";
 export { default as FormInput } from "./FormInput";
 export { default as SubmitBtn } from "./SubmitBtn";
+export { default as Filter } from "./Filter";
+export { default as ProductContainer } from "./ProductContainer";
